@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+            background: deeppink;
+            background-size: cover;
+        }
+        .form{
+            font-family: "Roboto", sans-serif;
+            position: relative;
+            z-index: 0;
+            background: black;
+            opacity: 99%;
+            max-width: 260px;
+            margin: 200px auto 100px;
+            padding: 10px 45px 30px 45px;
+            text-align: center;
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+            border-radius: 10px;
+        }
+        .form p{
+            font-size: 15px;
+            padding: 1px;
+            text-align: center;
+        }
+        .form input{
+            outline: 0;
+            border-radius: 10px;
+            background: #f2f2f2;
+            width: 100%;
+            border: 0;
+            margin: 0 0 15px;
+            padding: 15px;
+            box-sizing: 300px;
+            font-size: 14px;
+        }
+        .form input:hover{
+            background-color: pink;
+            transition: all 1s ease 0s;
+        }
+        .form button{
+            text-transform: uppercase;
+            outline: 0;
+            border-radius: 10px;
+            background: rgb(231, 146, 189);
+            width: 100%;
+            border: 0;
+            padding: 15px;
+            color: black;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .form button:hover, .form button:active, .form button:focus{
+            background-color: hotpink;
+            transition: all1s ease 0s;
+        }
+        .form .message{
+            margin: 15px 0 0;
+            color: #b3b3b3;
+            font-size: 12px;
+        }
+        .form .message a{
+            color: #06c5cf;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="form">
+    <p>Login</p>
+    <form>
+        <input type="text" name="username" placeholder="username">
+        <input type="password" name="password" placeholder="password">
+        <button>login</button>
+        <p class="message">Not registered? <a href="#">Create an account</a></p>
+    </form>
+</div>
+</body>
+</html>

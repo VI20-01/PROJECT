@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body{ 
+           background-color: black;    
+        }
+        h1{
+            color: hotpink;
+            opacity: 30;
+            font-size: 50px;
+            font-weight: 500;
+            text-align: center;
+            font-style: normal;
+            border-style: inset;
+            border-top-style: hidden;
+            border-left-style: hidden;
+            border-right-style: hidden;
+            border-bottom-color: hotpink;
+        }
+        li a{
+            color: hotpink;
+            font-size: 20px;
+            text-decoration: none;
+        }
+        nav{
+            text-align: right;
+        }
+        nav .dropbtn{
+            background-color: white;
+            opacity: 0.7;
+            padding: 5px;
+            border-radius: 15px;
+        }
+        nav .dropbtn a{
+            background-color: hotpink;
+            font-family: fantasy;
+            font-size: large;
+        }
+        ul{
+            margin-top: 60px;
+            padding: 0px;
+            list-style-type: none;
+            display: inline-block;
+        }
+        li a{
+            text-decoration: none;
+            margin: 30px;
+        }
+        li{
+            float: left;
+        }
+        li.dropdown{
+            display: inline-block;
+        }
+        .dropdown-content{
+            position: absolute;
+            display: none;
+        }
+        .dropdown-content a{
+            
+            
+            text-decoration: none;
+            margin-top: 12px;
+            display: block;
+            padding: 0px;
+            text-align: left;
+            color: hotpink;
+        }
+        li a:hover.dropdown:hover.dropbtn:hover{
+            background-color: brown;
+        }
+        .dropdown:hover .dropdown-content{
+            display: block;
+        }
+        .box{
+            position: absolute;
+            top: 24%;
+            left: 5%;
+            background: hotpink;
+            height: 40px;
+            border-radius: 40px;
+            padding: 10px;
+        }
+        .box:hover>input{
+            width: 240px;
+            padding: 0 6px;
+        }
+        .box:hover>.searchButton{
+            background: white;
+            color: hotpink;
+        }
+        .button{
+            color: black;
+            float: right;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: hotpink;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 0.4s;
+        }
+        .input{
+            border: none;
+            background: none;
+            outline: none;
+            float: left;
+            padding: 0;
+            color: black;
+            font-size: 20px;
+            transition: 0.4s;
+            line-height: 40px;
+            width: 0px;
+        }
+        @media screen and (max-width: 620px){
+            .searchBox:hover>.searchInput{
+                width: 140px;
+                padding: 0 6px;
+            }
+        }
+        .top-centered{
+            text-align: center;
+            font-size: 40px;
+            color: hotpink;
+            margin-top: 70px;
+            text-shadow: 20px;
+            font-style: normal;
+            font-family: fantasy;
+            padding: 10px;
+        }
+       
+        
+        .top-left1{
+            text-align: left;
+            font-size: 30px;
+            color: hotpink;
+            margin-top: 600px;
+            font-family: fantasy;
+            margin-left: 50px;
+        }
+        
+        .parent1{
+            position: relative;
+            width: 0;
+            height: 0;
+        }
+        .b1{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            top: 50px;
+            left: 60px;
+        }
+        .b2{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            top: 50px;
+            left: 360px;
+        }
+        .b3{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            top: 50px;
+            left: 660px;
+        }
+        .b4{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            top: 50px;
+            left: 960px;
+        }
+        .b5{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            top: 50px;
+            left: 1260px;
+        }
+        .top-left2{
+            text-align: left;
+            font-size: 30px;
+            color: hotpink;
+            margin-top: 400px;
+            font-family: fantasy;
+            margin-left: 50px;
+        }
+        .parent2{
+            position: relative;
+            width: 0;
+            height: 0;
+        }
+
+         .c1{
+            position: absolute;
+            width: 230px;
+            height: 250px;
+            top: 50px;
+            left: 60px;
+            border-radius: 500px;
+        }
+        .c2{
+            position: absolute;
+            width: 230px;
+            height: 250px;
+            top: 50px;
+            left: 360px;
+            border-radius: 500px;
+        }
+        .c3{
+            position: absolute;
+            width: 230px;
+            height: 250px;
+            top: 50px;
+            left: 660px;
+            border-radius: 500px;
+
+        }.c4{
+            position: absolute;
+            width: 230px;
+            height: 250px;
+            top: 50px;
+            left: 960px;
+            border-radius: 500px;
+        }
+        .c5{
+            position: absolute;
+            width: 230px;
+            height: 250px;
+            top: 50px;
+            left: 1260px;
+            border-radius: 500px;
+        }
+        .child1 a{
+            font-size: 20px;
+            color: hotpink;
+            position: absolute;
+            top: 1350px;
+        }
+        .d1{
+            left: 120px;
+        }
+        .d2{
+            left: 420px;
+        }
+        .d3{
+            left: 710px;
+        }
+        .d4{
+            left: 1020px;
+        }
+        .d5{
+            left: 1340px;
+        }
+        .child2 a{
+            font-size: 20px;
+            color: hotpink;
+            position: absolute;
+            top: 1840px;
+        }
+        .e1{left: 150px;}
+        .e2{left: 460px;}
+        .e3{left: 760px;}
+        .e4{left: 1065px;}
+        .e5{left: 1340px;}
+        ul.members{
+            position: absolute;
+            width: 200px;
+            box-shadow: 0 0 10 0 #000;
+            left: 161px;
+            top: 10px;
+        }
+        ul.members li{
+            position: absolute;
+            float: left;
+            display: block;
+            padding: 0px;
+            text-align: left;
+            color: aliceblue;
+        }
+        .Login{
+            
+            background-color: rgb(58, 49, 49);
+            font-size: 15px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin-top: 0px;
+            margin-left: 90%;
+            display: block;
+            border-radius: 20px;
+            border-width: 10px;
+        }
+        .Login a{
+           
+            text-decoration: none;
+            color: hotpink;
+        }
+
+     </style>
+</head>
+<body> 
+    <body>
+        <h1>BlinK.TowN</h1>
+        <button class="Login">
+            <a href="login.html">Login</a>
+        </button>
+        <nav>
+         <div class="a1">
+            <ul>
+                <li class="dropdown">
+                    <a href="" class="dropbtn">Explore</a>
+                    <div class="dropdown-content">
+                        <a href="info.html">Main Page > </a>
+                        <a href="">Community > </a>
+                        <a href="">About us > </a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="" class="dropbtn">Gallery</a>
+                    <div class="dropdown-content">
+                        <a href="kimjennie.html">Jennie </a>
+                        <a href="lalisa.html">Lisa </a>
+                        <a href="">Jisso </a>
+                        <a href="">Rosè </a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="" class="dropbtn">Discography</a>
+                    <div class="dropdown-content">
+                        <a href="">Studio albums > </a>
+                        <a href="">Mini albums > </a>
+                        <a href="">Solo Releases > </a>
+                        <a href="">Collaborations > </a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="" class="dropbtn">Videography</a>
+                    <div class="dropdown-content">
+                        <a href="">Shows</a>
+                        <a href="">Films</a>
+                        <a href="">YouTube</a>
+
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="box">
+        <input class="input" type="text" name="" placeholder="Search">
+        <button class="button" href="#">
+            <i class="material-icons">Search</i>
+        </button>
+    </div>
+    <div class="slidershow1 middle">
+        <div class="slides">
+            <input type="radio" name="r" id="r1" checked>
+            <input type="radio" name="r" id="r2">
+            <input type="radio" name="r" id="r3">
+            <input type="radio" name="r" id="r4">
+            <div class="slide s1">
+                <img src="https://www.allkpop.com/upload/2020/08/content/071736/1596836194-image.png" alt="">
+            </div>
+            <div class="slide">
+                <img src="https://www.allkpop.com/upload/2018/11/af_org/10113644/black-pink.jpg" alt="">
+            </div>
+            <div class="slide">
+                <img src="http://www.hallyukstar.com/wp-content/uploads/2020/01/blackpink-tour-2019.jpg" alt="">
+            </div>
+            <div class="slide">
+                <img src="https://a-static.besthdwallpaper.com/blackpink-members-in-square-up-album-photoshoot-wallpaper-2048x1152-34097_49.jpg" alt="">
+            </div>
+        </div>
+        <div class="navigation">
+            <label for="r1" class="bar"></label>
+            <label for="r2" class="bar"></label>
+            <label for="r3" class="bar"></label>
+            <label for="r4" class="bar"></label>
+        </div>
+    </div>
+    <div class="top-centered">You love their music,<br>Now bet on their songs.</div>
+    <div class="top-left1">Albums</div>
+   
+    </body>
+    <div class="parent1">
+        <a href=""><img class="b1" src="https://i.pinimg.com/originals/37/c6/f8/37c6f85f5648f50101bb1a6eeb1c503c.jpg" alt=""></a>
+        <a href=""><img class="b2" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEijISbP4mL23xA0k-DgCQfmKJYmtCMzrS_22tLyb6EVhBvn_fIEt8GpMcjE3Xg9_fkTNZLqEoXIAPNiHqRNkVxoNh4K-NMlX5r4fnwmPDgbpeqINE8UrjdnsO8Lfz22K58_vg79gvXiWhbsh5eTdCKoYtb5JuWJTjOZv9NqRZcrVRqETNvh7nZDk99R/s1012/BLACKPINK-BORN-PINK-Album.jpg" alt=""></a>
+        <a href=""><img class="b3" src="https://img.discogs.com/nppMjgeWONElIY1vsdgZ8990txU=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-13704640-1561225365-2069.png.jpg" alt=""></a>
+        <a href=""><img class="b4" src="https://images-na.ssl-images-amazon.com/images/I/61WoACTdeqL._SL1500_.jpg" alt=""></a>
+        <a href=""><img class="b5" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/99c08eac-1777-4459-81b0-341be2da5190/de116x5-2d2b5e4b-415a-4875-8564-5ec200fba617.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvOTljMDhlYWMtMTc3Ny00NDU5LTgxYjAtMzQxYmUyZGE1MTkwXC9kZTExNng1LTJkMmI1ZTRiLTQxNWEtNDg3NS04NTY0LTVlYzIwMGZiYTYxNy5qcGcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.e5u_tCtIxVZhFav-8Lj_yuVhnqhheJXNkUJ9t9i7G2Y" alt=""></a>
+    </div>
+    <div class="child1">
+        <a class="d1" href="">SquareOne</a>
+        <a class="d2" href="">BornPink</a>
+        <a class="d3" href="">KillThisLove</a>
+        <a class="d4" href="">TheAlbum</a>
+        <a class="d5" href="">solo</a>
+    </div>
+    <div class="top-left2">Artist</div>
+    <div class="parent2">
+        <a href=""><img class="c1" src="https://iv1.lisimg.com/image/16007365/532full-jennie-kim.jpg" alt=""></a>
+        <a href=""><img class="c2" src="https://i.pinimg.com/originals/c6/49/15/c64915ce9911a7b51e2e99a7b7254c7a.jpg" alt=""></a>
+        <a href=""><img class="c3" src="https://image.kpopmap.com/2020/07/4b0bdfc6-a639-11ea-8ea0-d7434be00753_image_hires_121748.jpg" alt=""></a>
+        <a href=""><img class="c4" src="https://dbkpop.com/wp-content/uploads/2018/12/blackpink_square_up_lisa_2.jpg" alt=""></a>
+        <a href=""><img class="c5" src="http://pm1.narvii.com/7269/a74376d4033fc5963a30980c190cfa7774ba6fbfr1-770-770v2_uhq.jpg" alt=""></a>
+    </div>
+    <div class="child2">
+         <a class="e1" href="">Jennie</a>
+         <a class="e2" href="">Rosè</a>
+         <a class="e3" href="">Jisso</a>
+         <a class="e4" href="">Lisa</a>
+         <a class="e5" href="">BlackPink</a>
+    </div>
+     <div class="top-left3">Pairings</div>
+     <ul class="menu">
+        <li><a class="f1" href="">Jensoo</a></li>
+        <li><a class="f2" href="">Lisoo</a></li>
+        <li><a class="f3" href="">Chaesoo</a></li>
+        <li><a class="f4" href="">LiNi</a></li>
+        <li><a class="f5" href="">Chaenni</a></li>
+        <li><a class="f6" href="">Chaelisa</a></li>
+     </ul>
+     <div class="top-left4">Collaborations</div>
+        <ul class="menu1">
+            <li><a class="f7" href="">Dua Lipa</a></li>
+            <li><a class="f8" href="">Lady Gaga</a></li>
+            <li><a class="f9" href="">Selena Gomez</a></li>
+            <li><a class="f10" href="">Cardi B</a></li>
+        </ul>
+        
+      <div class="slidershow2 right">
+            <div class="slides">
+                <input type="radio" name="r" id="r5" checked>
+                <input type="radio" name="r" id="r6">
+                <input type="radio" name="r" id="r7">
+                <input type="radio" name="r" id="r8">
+                <div class="slide s2">
+                    <img src="https://images.genius.com/2e9f6834853bc8d9d1317b83a2707bf3.1000x1000x1.png" alt="">
+                </div>
+                <div class="slide">
+                    <img src="https://i.pinimg.com/736x/40/80/a4/4080a4c7569076d9ab928142cbd4f9cc.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="https://i.pinimg.com/originals/df/83/c0/df83c0ed3860b9629f8156dfddd9713a.png" alt="">
+                </div>
+                <div class="slide">
+                    <img src="https://1.bp.blogspot.com/-a1IgA5vUgeU/X3M1HygFlbI/AAAAAAAAnY0/4zTS96afxMcg6bkp-rS4VBYq1i6FZ01cgCLcBGAsYHQ/s1350/120218458_2692774547655940_5435662618289304068_n.jpg" alt="">
+                </div>
+            </div>
+            <div class="navigation">
+                <label for="r5" class="bar"></label>
+                <label for="r6" class="bar"></label>
+                <label for="r7" class="bar"></label>
+                <label for="r8" class="bar"></label>
+            </div>
+    </div>
+    <div class="disco">
+    <div class="top-left5">Discography</div>
+        <div class="top-left6">Korean</div>
+        <h6 class="korean">Studio Albums</h6><h6 class="japanese">Studio Albums</h6>
+        <a class="data1" href="">~ The Album</a><div class="year1">(2020)</div>
+        <a class="data2" href="">~ Born Pink</a><div class="year2">(2022)</div>
+            
+        <div class="top-left7">Japanese</div>
+        <a class="data3" href="">~ BLACKPINK In Your Area</a><div class="year3">(2018)</div>
+        <a class="data4" href="">~ Kill This Love -JP Ver.-</a><div class="year4">(2019)</div>
+        <a class="data5" href="">~ The Album -JP Ver.-</a><div class="year5">(2021)</div>
+
+        <h6 class="korean1">Live Albums</h6>
+        <a class="data6" href="">~ BLACKPINK 2018 Tour 'In Your Area'Seoul</a><div class="year6">(2019)</div>
+        <a class="data7" href="">~ BLACKPINK 2021 'The Show'Live</a><div class="year7">(2021)</div>
+
+        <h6 class="japanese1">Live Albums</h6>
+        <a class="data8" href="">~ BLACKPINK Arena Tour 2018</a><div class="year8">(2019)</div>
+        <a class="data9" href="">~ BLACKPINK 2019-2020 World Tour In Your Area</a><div class="year9">(2020)</div>
+
+        <h6 class="korean2">Mini Albums</h6>
+        <a class="data10" href="">~ Square Up</a><div class="year10">(2018)</div>
+        <a class="data11" href="">~ Kill This Love</a><div class="year11">(2019)</div>
+
+        <h6 class="japanese2">Mini Albums</h6>
+        <a class="data12" href="">~ BLACKPINK</a><div class="year12">(2017)</div>
+        <a class="data13" href="">~ Re:BLACKPINK(repackage)</a><div class="year13">(2017)</div>
+        
+        <h6 class="korean3">Single Albums</h6>
+        <a class="data14" href="">~ "How You Like That"</a><div class="year14">(2020)</div>
+        
+        <h6 class="japanese3">Single Albums</h6>
+        <a class="data15" href="">~ "Ddu-Du Ddu-Du"</a><div class="year15">(2018)</div>
+    </div>
+        <br>
+        <br>
+        <br>
+        <div class="top-left8">Videography</div>
+        <div class="mv">MV Teasers</div>
+        <br>
+        <br>
+        <br>
+        <iframe class="vid1" width="700" height="350" src="https://www.youtube.com/embed/3sqE10_su0s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br>
+        <iframe class="vid2" width="300" height="160" src="https://www.youtube-nocookie.com/embed/lzrJl5ANxEs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe class="vid3" width="300" height="160" src="https://www.youtube-nocookie.com/embed/lmyq7ZPmaww" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe class="vid4" width="300" height="160" src="https://www.youtube-nocookie.com/embed/hEmDTe-qvvw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>" frameborder="0"></iframe>
+
+        
+        <h4>BLACKPINK</h4>
+        <img class="photo1" src="https://cdn.i-scmp.com/sites/default/files/styles/1200x800/public/d8/images/methode/2019/04/17/bcb7178e-5f5f-11e9-b745-17e2afcf325c_image_hires_105527.jpg?itok=hIMaaDbn" alt="">
+        <h5>Background Information</h5>
+        <div class="pink"></div>
+        <div class="origin">Origin:</div><div class="text1">Seoul , South Korea</div><br><br>
+        <div class="genre">Genres:</div><div class="text2">K-pop , EDM , hip hop ,<br> J-pop , Synth-pop</div><br><br>
+        <div class="when">Years active:</div><div class="text3">2016-present</div><br>
+        <div class="label">Labels:</div><div class="text4">YG . Avex . Interscope</div><br>
+        <div class="member">Members:</div><div class="text5">Jisso <br><br>Jennie <br><br>Rose`<br><br>Lisa</div><br><br>
+        <div class="web">Website:</div><div class="text6">blackpinkofficial.com</div><br>
+        
+</div>
+    
+<body>
+    <div class="footerContainer">
+        <div class="socialicons">
+            <a href=""><i class="fa-brands fa-facebook"></i></a>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+            <a href=""><i class="fa-brands fa-twitter"></i></a>
+            <a href=""><i class="fa-brands fa-google-plus"></i></a>
+            <a href=""><i class="fa-brands fa-youtube"></i></a>
+            
+        </div>
+        <div class="footernav">
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">News</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Contact Us</a></li>
+                <li><a href="">Our Team</a></li>
+            </ul>
+        </div>
+        
+    </div>
+    <div class="footerBottom">
+        <p>Copyright &copy;2023; Designed by <span class="designer">Vishakha</span></p>
+     </div>
+    </body>
+        
+</body>
+</html>
